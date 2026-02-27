@@ -1,0 +1,38 @@
+HELP.md
+
+# Build directories
+**/target/
+.mvn/wrapper/maven-wrapper.jar
+
+# Ignora i file reali
+src/main/resources/application.properties
+src/main/resources/keystore.p12
+
+# Traccia i file EXAMPLE
+!src/main/resources/EXAMPLEapplication.properties
+!src/main/resources/EXAMPLEkeystore.p12
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+build/
+dist/
+.nbdist/
+.nb-gradle/
+
+### VS Code ###
+.vscode/
