@@ -9,12 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Properties;
 
-//Allowed origins
-@CrossOrigin(origins = {
-        "https://www.webfixer.it",
-        "https://webfixer.it"
-        })
-
 // mailSender class initialization for Spring
 @RestController
 @RequestMapping("mailSender")
