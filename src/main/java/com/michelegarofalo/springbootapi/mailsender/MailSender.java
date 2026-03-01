@@ -7,6 +7,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 import java.util.Properties;
 
 // mailSender class initialization for Spring
@@ -19,6 +22,10 @@ import java.util.Properties;
         }
 )
 public class MailSender {
+
+    DateTimeFormatter formatter =
+            DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    String currentTime = LocalDateTime.now().format(formatter);
 
     @Value("${mail.username}")
     private String username;
@@ -48,7 +55,7 @@ public class MailSender {
             @RequestParam(value = "dbIntegration", required = false) String dbIntegration,
             @RequestParam(value = "expiryDate", required = false) String expiryDate
     ) {
-        System.out.println(">> sendMail method called");
+        System.out.println(">> [" + currentTime + "] sendMail method called");
 
         // Cleaning all input params
         formType = clean(formType);

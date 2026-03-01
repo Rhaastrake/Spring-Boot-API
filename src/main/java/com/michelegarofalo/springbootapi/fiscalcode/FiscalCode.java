@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 //
 @RestController
 @RequestMapping ("fiscalCode")
+
 @CrossOrigin(origins = "*")
 public class FiscalCode {
 
