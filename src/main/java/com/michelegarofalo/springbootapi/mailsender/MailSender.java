@@ -12,6 +12,12 @@ import java.util.Properties;
 // mailSender class initialization for Spring
 @RestController
 @RequestMapping("mailSender")
+@CrossOrigin(
+        origins = {
+                "https://www.webfixer.it",
+                "https://webfixer.it"
+        }
+)
 public class MailSender {
 
     @Value("${mail.username}")
@@ -26,6 +32,8 @@ public class MailSender {
     // sendMail Method initialization for Spring
     @PostMapping("sendMail")
     public ResponseEntity<String> sendMail(
+            @RequestHeader(value = "Origin", required = false) String origin,
+
             @RequestParam(value = "formType", required = false) String formType,
             @RequestParam(value = "name", required = false) String name,
             @RequestParam(value = "phoneNumber", required = false) String phoneNumber,

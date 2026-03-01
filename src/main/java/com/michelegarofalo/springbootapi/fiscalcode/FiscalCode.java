@@ -11,13 +11,12 @@ import java.net.URL;
 
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins = "*")
-
 //
 // THIS CLASS CAN BE USED TO CALCULATE AN ITALIAN FISCAL CODE
 //
 @RestController
 @RequestMapping ("fiscalCode")
+@CrossOrigin(origins = "*")
 public class FiscalCode {
 
     // ############################################
